@@ -33,27 +33,27 @@ print(df.head(5)) # show the first 5 rows
 print(df.describe()) # show the statistics of the dataframe
 print(df.describe(include="all"))
 
-print(df.info())
+print(df.info()) # show the information of the dataframe
 
-df.replace("?", np.nan, inplace=True)
+df.replace("?", np.nan, inplace=True) # replace "?" with NaN
 print(df.head(5))
 
-missing_data = df.isnull();
-print(missing_data.head(5))
+missing_data = df.isnull(); # check for missing data
+print(missing_data.head(5)) # show the first 5 rows
 
-for column in missing_data.columns.values.tolist():
-    print(column)
-    print(missing_data[column].value_counts())
-    print("")
+for column in missing_data.columns.values.tolist(): # show the missing data of each column
+    print(column) # show the column name
+    print(missing_data[column].value_counts()) # show the count of missing data
+    print("") # print a new line
 
-horse_power = df["horsepower"]
-print(horse_power)
+horse_power = df["horsepower"] # show the horsepower column
+print(horse_power) # show the horsepower column
 
-horse_power_list = horse_power.tolist
-print(horse_power_list)
+horse_power_list = horse_power.tolist # convert the column to a list
+print(horse_power_list) # show the list
 
-agv_norm_loss = df["normalized_losses"].astype("float").mean(axis=0)
-print("Average of normalized losses: ", agv_norm_loss)
+agv_norm_loss = df["normalized_losses"].astype("float").mean(axis=0) # calculate the average of the normalized losses
+print("Average of normalized losses: ", agv_norm_loss) # show the average of the normalized losses
 
 avg_bore = df["bore"].astype("float").mean(axis=0)
 print("Average of bore: ", avg_bore)
